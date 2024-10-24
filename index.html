@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEDDY</title>
+
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            background: #ffe6cc;
+            
+        }
+       
+
+        .card{
+            
+            padding:0px;
+            box-shadow: 0px 0px 10px 1px #663500;
+            width: 25%;
+            margin: 4% auto;
+            border-radius: 4px;
+            
+        }
+
+        .img{
+            
+            width: 100%;
+            display: block;
+            margin: 0px auto;
+            border-radius: 5px;
+        }
+
+        .p-name{
+            text-align: center;
+            font-size: 21px;
+            margin-top: 15px;
+            margin-bottom: 6px;
+        }
+
+        .price{
+            margin-top: 0;
+            font-size: 20px;
+           text-align: center;
+           margin-bottom: 10px;
+        }
+
+        .quantity-card{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 18px;
+        }
+
+        .minus-sign{
+            width: 30px;
+            padding-left: 6%;
+            padding-right: 6%;
+            cursor: pointer;
+        }
+
+        #quantity{
+            font-weight:300;
+            font-size: 22px;
+        }
+
+        .buy-btn{
+            display: block;
+            margin: 10px auto;
+            margin-bottom: 10px;
+            width: 60%;
+            padding: 4px;
+            border-radius: 5px;
+            border: 2px solid #663500;
+            background-color: #e60000;
+            color: antiquewhite;
+            font-weight: bold;
+            font-family: cursive;
+            font-size: 18px;
+            cursor: pointer;
+
+        }
+
+        .margin{
+            padding: 10px;
+
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="card">
+        <img src="./teddy.jpg" alt="teddy" class="img">
+        <p class="p-name">Teddy Bear<b> \ ₹ </b>400</p>
+    
+        <div class="quantity-card">
+            <img src="./minus.png" alt="decriment-logo" class="minus-sign" onclick="decrement()">
+            <span id="quantity">1</span>
+            <img src="./plus.png" alt="increment-logo" class="minus-sign" onclick="increment()">
+        </div>
+        <div class="margin">
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+     </div>
+
+
+     <script>
+
+        const quantityElement = document.getElementById("quantity");
+
+        function decrement(){
+            let quantity = parseInt(quantityElement.innerText);
+
+            if(quantity>1){
+            quantityElement.innerText = -- quantity;
+
+            }
+        }
+
+        function increment(){
+            let quantity = parseInt(quantityElement.innerText);
+            quantityElement.innerText = ++quantity;
+        }
+     </script>
+</body>
+</html>
